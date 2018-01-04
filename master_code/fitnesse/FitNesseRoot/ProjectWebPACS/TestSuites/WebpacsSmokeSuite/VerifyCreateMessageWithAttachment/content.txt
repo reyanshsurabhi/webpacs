@@ -1,0 +1,2 @@
+!1 Verify create message with attachment functionality under Message Center
+!contents -R2 -g -p -f -h

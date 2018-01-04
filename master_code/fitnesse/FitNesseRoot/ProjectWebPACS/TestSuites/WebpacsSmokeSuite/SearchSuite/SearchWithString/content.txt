@@ -1,0 +1,20 @@
+!*> Library
+
+!2 When
+
+|scenario  |When Search with Client name:luna               |
+|enter text|${Home_searchBox}   |in searchbox|${searchInput}|
+|click on  |${Home_searchButton}|search button              |
+
+
+!2 Then
+
+|scenario    |Then displays message:Showing studies where patient id, patient name, and/or client name match: Luna|
+|check search|${Home_searchResultsmsg}               |input               |${expctedSearchResultmsg}              |
+
+*! 
+
+![ script
+When Search with Client name:luna
+Then displays message:Showing studies where patient id, patient name, and/or client name match: Luna
+]!

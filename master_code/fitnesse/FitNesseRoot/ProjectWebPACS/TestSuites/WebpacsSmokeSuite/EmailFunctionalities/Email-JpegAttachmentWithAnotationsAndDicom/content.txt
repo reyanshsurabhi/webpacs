@@ -1,0 +1,39 @@
+!*> Library
+
+!2 When
+!|scenario         |When sending email in the share dialog - Jpeg Attachments with Add annotation and Dicom|                                                                        
+|navigate to       |${Home_searchResultsfirstImage}        |imageviewer screen|                                                                                          
+|draw annotation|${ImageViewer_AdvancedMeasurementTool}|on|${ImageViewer_VhsTool}|vhs|
+|click on|${ImageViewer_HomeIcon}|home button|
+|click on          |${Home_firstShareImageLink}            |share images|
+|click on|${Home_firstShareAnyImageFromStudyLink}|share any image from this study|
+
+!2 Then
+|scenario|Then displays share screen               |
+|ensure  |check|${ShareDialog}|share dialog display|
+
+
+!2 When
+!|scenario|Enter valid email id and click on send|
+|enter|${EmailTo}|email|${shareDialogEmailToAddress}|address|${EmailIdAddress}|
+|select |${JpegAttachmentsRadioButton}|jpegAttchments radiobutton with|${addAnnotationCheckBox}|add annotations and dicom|
+|click on|${EmailSendButton}|send button|
+
+!2 And
+!|scenario|Verify the email from the sent email account and click on image thumbnail in the email|
+|navigate to gmail|
+|enter|${GmailUsername}|gmail|${gmailUsername}|username|
+|click on|${GmailNext}|gmail next button|
+|enter|${GmailPassword}|gmail|${gmailPassword}|password|
+|click on|${GmailSignInButton}|gmail signin button|
+|click on|${AutomationLabel}|email functionality label|
+|click on response email|${responseEmail}|on ad|
+*!
+
+
+![ script
+When sending email in the share dialog - Jpeg Attachments with Add annotation and Dicom
+Then displays share screen
+Enter valid email id and click on send
+Verify the email from the sent email account and click on image thumbnail in the email
+]!

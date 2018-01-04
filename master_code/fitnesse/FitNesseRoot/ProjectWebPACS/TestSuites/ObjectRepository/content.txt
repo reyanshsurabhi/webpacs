@@ -1,0 +1,97 @@
+!*** Login Page
+!define Login_username {id::loginUser}
+!define Login_password {name::password}
+!define Login_signinButton {xpath::.//*[@id='loginInputContainer']/div[6]/div/div}
+!define Login_imageLink {linkText::Imaging}
+!define Login_logout {id::signOutButton}
+*!
+
+!*** Home Page
+!define Home_helpmenuButton {id::helpMenufromHomeButton}
+!define Home_about_IDEXX_WebPACS {linkText::About IDEXX Web PACS}
+!define Home_versionNumber {xpath:://div[normalize-space(text())='Version 1.15.0.2976']}
+!define Home_searchBox {id::searchInput}
+!define Home_searchResultsmsg {xpath::.//*[@id='searchDescriptionArea']}
+!define Home_searchButton {css::button.searchButton}
+!define Home_firstShareImageLink {xpath:://a[@title='Share these images']}
+!define Home_firstShareAnyImageFromStudyLink {xpath:://a[normalize-space(text())='Share any image from']/strong[text()='this study']}
+!define Home_searchResultsfirstImage {xpath::.//*[@id='patientCard']/div[3]/div[2]/div/div[1]/div/div}
+*!
+
+!*** Image Viewer Page
+!define ImageViewer_AdvancedMeasurementTool {xpath::.//*[@id='bottomButton-measure']}
+!define ImageViewer_VhsTool {xpath::.//*[@id='bottomButton-annotate-VHS']}
+!define ImageViewer_HomeIcon {xpath::.//*[@id='viewerMenuBar']/div[4]}
+*!
+
+!*** Share Dialog
+!define ShareDialog {id::shareWidgetPanel}
+!define EmailTo {id::partnerTextEntry}
+!define EmailIdAddress {css::span.ng-binding.unregistered}
+!define EmailSendButton {xpath:://button[normalize-space()='Send']}
+!define JpegAttachmentsRadioButton {xpath:://form/div[2]/label[2]/div}
+!define InteractiveButton {xpath::.//*[@id='tabs']/ul/li[4]}
+!define dicomTagsCheckBox {xpath:://form/div[3]/div[1]/span[1]}
+!define addAnnotationCheckBox {xpath:://form/div[3]/div[2]/span[1]}
+*!
+
+!*** Interactive Collaberation Host Page
+!define EndCollaberationButton {xpath:://*[@id="icControllerDialog"]/header/div[4]}
+!define ChatWindow {xpath::(//div[@id='chatPaneTab'])[2]}
+!define showParticipant {css::p[title="Show participant information"]}
+!define hostStatus {xpath::.//*[@id='icControllerDialog']/section/div/div[3]/div[2]}
+!define participantStatus {xpath::.//*[@id='icControllerDialog']/section/div/div[4]/div[2]}
+!define annotationToolsIcon {xpath::.//*[@id='rightButtonsContainer']/input[1]}
+!define strightLineIcon {xpath::.//*[@id='popup-bottomToolbar']/div/div/div[1]/div[2]/input[1]}
+*!
+
+!*** Gmail Page
+!define GmailUsername {id::Email}
+!define GmailNext {id::next}
+!define GmailPassword {id::Passwd}
+!define GmailSignInButton {id::signIn}
+!define AutomationLabel {xpath:://a[contains(text(),'Automation')]}
+!define ICLabel {xpath:://a[contains(text(),'IC')]}
+!define responseEmail {xpath:://span[contains(text(),'Diagnostic images for')]}
+!define icresponseEmail {xpath:://b[contains(text(),'Invitation to collaborate')]}
+!define Home_settingsButton {xpath:://div[@id='settingsFromHomeButton']}
+!define practice_information_link {xpath:://div[text()='Practice Information']}
+!define reply_to_email_text {xpath:://div[@class='clinicAETitleContainer']//input[@name='emailId']}
+!define validate_email_button {xpath:://div[@class='clinicAETitleContainer']/div[@class='email-verifier validEmail']//span[2]}
+!define rest_to_do_not_reply {xpath:://button[contains(text(),"Reset to Do Not Reply")]}
+!define settings_close_button {xpath:://button[contains(text(),"Close")]}
+!define share_button {xpath:: //div[@class="ng-scope button-patient-card-border"]/a[@class='button-card-share button-card']}
+!define share_dailog {xpath:: //div[@class='anchored-dialog']}
+!define share_any_image {xpath:: //div[@class='anchored-dialog']//pacs-button[@class='ng-scope ng-isolate-scope'][1]}
+!define share_any_email_from {xpath:: //form[@name='shareByEmailForm']/label[@class='input-line-item']/p}
+!define placeholder_attribute {placeholder}
+!define gmail_username {xpath:: //input[@id='Email']}
+!define gmail_password {xpath:: //input[@id='Passwd']}
+!define gmail_next {xpath:: //input[@id='next']}
+!define gmail_submit {xpath:: //input[@id='signIn']}
+!define first_gmail {xpath:: //div[@class='Cp']//table/tbody/tr[1]}
+!define first_gmail_activate_link {xpath:: //a[contains(@href,'https://email-verification.us-east-1.amazonaws.com/')]}
+!define validated_email {xpath:: //div[contains(@class, 'verifiedEmailMessage')]/span}
+!define email_edit_link {xpath:: //div[@id='contentInstructionHeader']//pacs-button[1]/button}
+!define share_widget_cancel {xpath:: //div[@id='shareWidgetPanel']//pacs-button/button[contains(text(), 'Cancel')]}
+!define message_center_link {xpath:: //div[contains(@ng-click,'messageIconCtrl.messageCenterService')]/span}
+!define message_center_div {xpath:: //div[@class='message-list-title-container']}
+!define first_message {xpath:: //div[@class='message-list-select-message-area']}
+!define first_msg_title {xpath:: //div[@class='message-details-inner-border']//div[contains(@class,'ng-binding message-details-title')]}
+!define first_msg_body {xpath:: //div[@class='message-details-content-inner']//div[contains(@class,'message-details-message')]/p}
+!define first_msg_attachment {xpath:: //span[contains(@class,'message-details-attachment-block-link')]/a}
+*!
+
+!*** Admin Page
+!define admin_username {xpath:: //form[@id='_loginForm']//div[@class='loginInnerBorder']//div[2]/input[contains(@class, 'ib-input')][1]}
+!define admin_password {xpath:: //input[@id='_password']}
+!define admin_signin {xpath:: //input[@id='_submitButton']}
+!define admin_msg_cent_link {xpath:: //a[@id='ui-id-8']}
+!define admin_crtemsg_link {xpath:: //a[text()='Create Message']}
+!define admin_cmpsmsg_link {xpath:: //a[text()='Compose Message']}
+!define admin_cmpmsg_title {xpath:: //input[contains(@class, 'ib-input compose-message-title-input')]}
+!define admin_cmpmsg_body {xpath:: //div[contains(@id,'taTextElement')]}
+!define admin_cmpmsg_send {xpath:: //div[@class='compose-message-right-button-area']//pacs-button[2]/button}
+!define admin_cmpmsg_attachFile {xpath:: //button[@name='attachFile']/i}
+!define admin_signout {xpath:: //a[@id='signOutButton']}
+*!

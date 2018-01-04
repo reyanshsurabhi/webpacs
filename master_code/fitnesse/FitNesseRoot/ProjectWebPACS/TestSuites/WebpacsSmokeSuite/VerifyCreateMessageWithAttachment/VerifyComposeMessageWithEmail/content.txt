@@ -1,0 +1,46 @@
+!*> Library
+
+!2 When
+!|scenario  |Login to qa admin |
+|open|${adminUrl}|url|
+|enter text|${admin_username}   |in searchbox|${adminUsername}|
+|enter text|${admin_password}   |in searchbox|${adminPss}|
+|click on |${admin_signin}|search button|
+
+!2 Then
+!|scenario |Then compose message under message center tab |
+|click on | ${admin_msg_cent_link} |search button|
+|click on | ${admin_crtemsg_link} |search button|
+|click on | ${admin_cmpsmsg_link} |search button|
+|enter text | ${admin_cmpmsg_title} |in searchbox|${admin_cmp_msg_title}|
+|click on | ${admin_cmpmsg_body} |search button|
+
+!2 Then
+!|scenario| Then attach a file and click on send button and signout|
+|enter text | ${admin_cmpmsg_body} |in searchbox|${admin_cmp_msg_body}|
+|click on | ${admin_cmpmsg_attachFile} |search button|
+|upload file|${file_paths}|into|
+|scroll to |${admin_cmpmsg_send}|element|
+|click on |${admin_cmpmsg_send}|search button|
+|click on | ${admin_signout} |search button|
+
+!2 And
+!|scenario| Login to webPACS and verify email presence|
+|open|${homeUrl}|url|
+|enter   |${Login_username}      |username      |${user} |
+|enter   |${Login_password}      |password      |${pass} |
+|click on|${Login_signinButton}|signin button|
+|click on|${Login_imageLink}   |image link|
+|click on|${message_center_link}   |image link|
+|click on|${first_message}   |image link|
+|verify default |${first_msg_title}|email text|${admin_cmp_msg_title}|
+|verify default |${first_msg_body}|email text|${admin_cmp_msg_body}|
+|verify element |${first_msg_attachment}|present|
+*!
+
+![ script
+Login to qa admin
+Then compose message under message center tab
+Then attach a file and click on send button and signout
+Login to webPACS and verify email presence
+]!

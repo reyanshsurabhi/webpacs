@@ -1,0 +1,48 @@
+!include -c Test_Config
+
+!**> startscenarios
+
+#|scenario|startsauce|
+#|set sauce browser|${S_BROWSER}|
+#|set sauce platform|${S_PLATFORM}|
+#| $webDriver= | new remote web driver |
+#| start driver |$webDriver| on url | ${url} |
+
+|scenario|startsauce|
+|set browser| { "name": "SaucelabTest", "remote": "!-http://-!${sauce.user}:${sauce.accesskey}@ondemand.saucelabs.com:80/wd/hub", "browserName": "${S_BROWSER}", "platform": "${S_PLATFORM}", "version":"" } |
+| $webDriver= | new web driver |
+| start driver |$webDriver| on url | https://qa.vetconnectplus.com/login |
+
+#|scenario|startdev|
+#|set browser| { "name": "SauceDevtest", "remote": "!-http://-!${sauce.user}:${sauce.accesskey}@ondemand.saucelabs.com:80/wd/hub", "browserName": "${D_BROWSER}", "platform": "Windows 7" } |
+#| $webDriver= | new web driver |
+#| start driver |$webDriver| on url | https://qa.vetconnectplus.com/login |
+
+#|scenario|startdev|
+#|set dev browser|${D_BROWSER}|
+#|set dev platform|Windows 7|
+#| $webDriver= | new dev web driver |
+#| start driver |$webDriver| on url | https://qa.vetconnectplus.com/login |
+
+
+|scenario|startdevlocal|
+|set browser|${browser}|
+| $webDriver=| new web driver |
+| start driver |$webDriver| on url | ${url} |
+
+#| start driver |$webDriver| on url | https://qa.vetconnectplus.com/login |
+
+
+#|scenario|startsaucemobile|
+#|set remote mobile browser|${M_BROWSER}|
+#|set remote mobile device|${M_DEVICE}|
+#|set remote mobile platform|${M_PLATFORM}|
+#| $webDriver=| new mobile web driver |
+#| start driver |$webDriver| on url | https://qa.vetconnectplus.com/login |
+
+|scenario|startsaucemobile|
+| $webDriver=|set remote mobile browser| { "name": "Xebiumtest", "remote": "!-http://-!${sauce.user}:${sauce.accesskey}@ondemand.saucelabs.com:80/wd/hub","appiumVersion": "1.5.3","deviceName":"${M_DEVICE}", "deviceOrientation":"portrait","browserName":"${M_BROWSER}","platformVersion":"${M_VERSION}","platformName":"${M_PLATFORM}"}|
+| start mobiledriver |$webDriver| on url | https://qa.vetconnectplus.com/login |
+#| $webDriver=|set remote mobile browser| { "name": "Xebiumtest", "remote": "!-http://-!${sauce.user}:${sauce.accesskey}@ondemand.saucelabs.com:80/wd/hub","appiumVersion": "1.5.3","deviceName":"${M_DEVICE}", "deviceOrientation":"portrait","browserName":"${M_BROWSER}","platformVersion":"${M_VERSION}","platformName":"${M_PLATFORM}"}|
+
+****************!

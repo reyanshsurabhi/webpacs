@@ -1,0 +1,61 @@
+|library                    |
+|idexx vet connect plus fixture|
+|idexx vet connect plus page|
+|webpacs home fixture|
+|webpacs home page|
+|share dialog fixture|
+|share dilaog page|
+|interactive collaberation host page|
+|Interactive collaberation host fixture|
+|gmail fixture|
+|gmail page|
+
+
+
+!include -c <TestSuites.Testdata
+!include -c <TestSuites.ObjectRepository
+
+#|script|
+#|login application||${user}||${pass}|
+#|start application|
+
+!*> Library 
+
+!2 Given
+
+|scenario|I have given credentials with username and password|
+|enter   |${Login_username}      |username      |${user}     |
+|enter   |${Login_password}      |password      |${pass}     |
+
+!2 When
+
+|scenario|When I try to login                |
+|click on|${Login_signinButton}|signin button|
+|click on|${Login_imageLink}   |image link   |
+
+!2 Then
+
+|scenario|Then login succeeds, I can see WebPACS Home page|
+|check page title|
+
+!2 When
+
+|scenario  |When Search with Client name:luna               |
+|enter text|${Home_searchBox}   |in searchbox|${searchInput}|
+|click on  |${Home_searchButton}|search button              |
+
+
+!2 Then
+
+|scenario    |Then displays message:Showing studies where patient id, patient name, and/or client name match: Luna|
+|check search|${Home_searchResultsmsg}               |input               |${expctedSearchResultmsg}              |
+
+*! 
+
+![ script
+I have given credentials with username and password
+When I try to login
+Then login succeeds, I can see WebPACS Home page
+When Search with Client name:luna
+Then displays message:Showing studies where patient id, patient name, and/or client name match: Luna
+]!

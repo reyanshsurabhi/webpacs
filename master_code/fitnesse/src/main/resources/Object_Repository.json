@@ -1,0 +1,10 @@
+{
+	"username":"id;username",
+	"password":"id;password",
+	"Login":"cssSelector;body > div > div.login-panel > form > div:nth-child(3) > div > input.button.expand",
+	"Second Location":"cssSelector;body > div > div.orphaned-page-panel > form > ul > li:nth-child(1) > input",
+	"Main Location":"cssSelector;body > div > div.orphaned-page-panel > form > ul > li:nth-child(2) > input",
+	"Logout":"cssSelector;#content-body > header > div.header-utilities > div.header-utilities-major-line.header-utilities-major-line--buttons > a.major-line-item.major-line-item--circle.icon-idexx-logout.tooltip-left"
+	
+	
+}

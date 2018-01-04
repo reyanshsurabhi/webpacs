@@ -1,0 +1,35 @@
+e!*> Library
+
+!2 When
+
+|scenario|Click on share Option from patient Card and select from this study link|
+|click on|${Home_firstShareImageLink}|share images|
+|click on|${Home_firstShareAnyImageFromStudyLink}|share any image from this study|
+
+!2 Then
+|scenario|Then displays share panel|
+|ensure |check|${ShareDialog}|share dialog display|
+
+!2 When
+!|scenario|Enter valid email id and click on send|
+|enter|${EmailTo}|email|${shareDialogEmailToAddress}|address|${EmailIdAddress}|
+|click on|${EmailSendButton}|send button|
+
+!2 And
+!|scenario|Verify the email from the sent email account and click on image thumbnail in the email|
+|navigate to gmail|
+|enter|${GmailUsername}|gmail|${gmailUsername}|username|
+|click on|${GmailNext}|gmail next button|
+|enter|${GmailPassword}|gmail|${gmailPassword}|password|
+|click on|${GmailSignInButton}|gmail signin button|
+|click on|${AutomationLabel}|email functionality label|
+|click on|${responseEmail}|response email|
+
+*!
+
+![ script
+Click on share Option from patient Card and select from this study link
+Then displays share panel
+Enter valid email id and click on send
+Verify the email from the sent email account and click on image thumbnail in the email
+]!

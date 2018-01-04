@@ -1,0 +1,23 @@
+!contents -R2 -g -p -f -h
+!define user {digital10}
+!define pass {digital}
+!define homeUrl {https://qa.vetconnectplus.com/login}
+!define versionNumber {Version 1.15.0.2976}
+!define searchInput {luna}
+!define expctedSearchResultmsg {Showing studies where patient id, patient name, and/or client name match: Luna}
+!define shareDialogEmailToAddress {webpacsautomation@gmail.com}
+!define gmailUsername {webpacsautomation}
+!define gmailPassword {Test@12345}
+!define reply_to_email_email {practicename@serviceprovider.com}
+!define reply_to_user_email {webpacsautomation@gmail.com}
+!define reply_to_user_password {Test@12345}
+!define gmail_url {http://www.gmail.com}
+!define verified_email_text {Verified}
+!define donot_reply_share_email {DoNotReplyRadiography@idexx.com}
+!define adminUrl {https://qa.idexximagebank.com/login}
+!define adminUsername {lpilla}
+!define adminPss {Nike@654321}
+!define file_paths {.\\src\\main\\resources\\Test.pdf}
+!define admin_cmp_msg_title {Test Title}
+!define admin_cmp_msg_body {This is test body from test automation}
+

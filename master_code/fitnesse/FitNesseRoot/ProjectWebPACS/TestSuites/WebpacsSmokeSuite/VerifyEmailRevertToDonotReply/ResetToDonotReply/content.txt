@@ -1,0 +1,74 @@
+!*> Library
+
+!2 When
+!|scenario  |When click on setting button |
+|click on  |${Home_settingsButton}|search button |
+|click on  |${practice_information_link}|practice information button |
+|click on |${rest_to_do_not_reply}|search button|
+|verify default |${reply_to_email_text}|email|${reply_to_email_email}|text|${placeholder_attribute}|
+|enter text|${reply_to_email_text}   |in searchbox|${reply_to_user_email}|
+|click on  |${validate_email_button}|search button |
+
+!2 then
+!|scenario  |Then login into gmail and activating the email |
+|homepage|${Login_logout}  |logout |
+|open|${gmail_url}|url|
+|enter text|${gmail_username}   |in searchbox|${reply_to_user_email}|
+|click on |${gmail_next}|search button|
+|enter text|${gmail_password}   |in searchbox|${reply_to_user_password}|
+|click on |${gmail_submit}|search button|
+|click on |${first_gmail}|search button|
+|click on |${first_gmail_activate_link}|search button|
+
+!2 then
+!|scenario  |Then login back and going to vet page |
+|open|${homeUrl}|url|
+|enter   |${Login_username}      |username      |${user}     |
+|enter   |${Login_password}      |password      |${pass}     |
+|click on|${Login_signinButton}|signin button|
+|click on|${Login_imageLink}   |image link|
+
+
+!2 And
+!|scenario |And logout from home page|
+|click on  |${Home_settingsButton}|search button |
+|click on  |${practice_information_link}|practice information button |
+|verify default |${validated_email}|email text|${verified_email_text}|
+|click on |${email_edit_link}|search button|
+|click on |${settings_close_button}|search button|
+
+!2 And
+!|scenario |And verify the email in share|
+|enter text|${Home_searchBox}   |in searchbox|${searchInput}|
+|click on  |${Home_searchButton}|search button |
+|click on |${share_button}|search button|
+|click on |${share_any_image}|search button|
+|verify default |${share_any_email_from}|email text|${reply_to_user_email}|
+|click on |${share_widget_cancel}|search button|
+
+!2 And
+!|scenario|And resert to do not reply and verify |
+|click on  |${Home_settingsButton}|search button |
+|click on  |${practice_information_link}|practice information button |
+|click on |${email_edit_link}|search button|
+|click on |${rest_to_do_not_reply}|search button|
+|click on |${settings_close_button}|search button|
+
+!2 And
+!|scenario |And verify the email in share after reset|
+|click on  |${Home_searchButton}|search button |
+|click on |${share_button}|search button|
+|click on |${share_any_image}|search button|
+|verify default |${share_any_email_from}|email text|${donot_reply_share_email}|
+|click on |${share_widget_cancel}|search button|
+
+*!
+![ script
+When click on setting button
+Then login into gmail and activating the email
+Then login back and going to vet page
+And logout from home page
+And verify the email in share
+And resert to do not reply and verify
+And verify the email in share after reset
+]!

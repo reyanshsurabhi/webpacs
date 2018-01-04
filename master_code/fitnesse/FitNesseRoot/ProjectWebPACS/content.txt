@@ -1,0 +1,8 @@
+!1 Welcome to the WebPACS Fitnesse setup
+
+!3 Press image below to enter the project
+[[!img http://files/images/Animana!.jpg][ProjectWebPACS.TestSuites]]
+
+If you want to start using Xebium, the XebiumTemplate might be a good starting point.
+
+

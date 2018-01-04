@@ -1,0 +1,13 @@
+!define url {https://qa.vetconnectplus.com/login}
+!define browser {firefox}
+!define D_BROWSER {firefox}
+!define sauce.user {automation_idexx}
+!define sauce.accesskey {74674b39-4db7-4461-9843-a80ecd05ecb9}
+!define S_BROWSER {firefox}
+!define S_PLATFORM {Windows 7}
+!define M_BROWSER {}
+!define M_PLATFORM {Android}
+!define M_DEVICE {Samsung Galaxy Tab 3 Emulator}
+!define M_VERSION {4.2}
+!define verconnectPlusHomeUrl {https://qa.vetconnectplus.com/v2/home}
+!define gmailUrl {http://gmail.com}

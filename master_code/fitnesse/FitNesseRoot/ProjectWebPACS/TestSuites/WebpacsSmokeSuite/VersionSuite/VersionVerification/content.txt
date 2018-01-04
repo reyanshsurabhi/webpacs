@@ -1,0 +1,29 @@
+!include -c <TestSuites.Testdata
+!include -c <TestSuites.ObjectRepository
+
+
+!*> Library
+
+!2 When
+
+|scenario|When I try to click on About idexx webPACS page     |
+|click on|${Home_helpmenuButton}     |help menu button        |
+|click on|${Home_about_IDEXX_WebPACS}|about idexx webpacs link|
+
+!2 Then
+
+|scenario     |Then version  display.                       |
+|check version|${Home_versionNumber}|number|${versionNumber}|
+
+!2 And
+|scenario|And logout from home page|
+|homepage|${Login_logout}  |logout |
+
+*!
+
+
+![ script
+When I try to click on About idexx webPACS page 
+Then version  display.
+And logout from home page
+]!

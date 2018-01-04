@@ -1,0 +1,44 @@
+|library                    |
+|idexx vet connect plus fixture|
+|idexx vet connect plus page|
+|webpacs home fixture|
+|webpacs home page|
+
+
+
+!include -c <TestSuites.Testdata
+!include -c <TestSuites.ObjectRepository
+
+
+!*> Library 
+
+!2 Given
+
+|scenario|I have given credentials with username and password|
+|enter   |${Login_username}      |username      |${user}     |
+|enter   |${Login_password}      |password      |${pass}     |
+
+!2 When
+
+|scenario|When I try to login                |
+|click on|${Login_signinButton}|signin button|
+|click on|${Login_imageLink}   |image link   |
+
+!2 Then
+
+|scenario|Then login succeeds, I can see WebPACS Home page|
+|check page title|
+
+
+!2 And
+|scenario|And logout from home page|
+|homepage|${Login_logout}  |logout |
+
+*! 
+
+![ script
+I have given credentials with username and password
+When I try to login
+Then login succeeds, I can see WebPACS Home page
+And logout from home page
+]!
